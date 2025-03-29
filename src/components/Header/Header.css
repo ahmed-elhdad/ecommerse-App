@@ -1,0 +1,87 @@
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Black-white: hsla(0, 0%, 0%, 0.75);
+}
+
+header {
+  width: 100%;
+  background-color: var(--White);
+  height: 70px;
+  padding-bottom: 10px;
+}
+header img.logo {
+  width: 130px;
+  height: 50px;
+  margin-left: 20px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+}
+header img.logo:hover {
+  border: none;
+}
+header nav ul {
+  gap: 20px;
+  list-style: none;
+}
+header nav ul li {
+  text-transform: capitalize;
+}
+header nav ul a {
+  text-decoration: none;
+  color: var(--Grayish-blue);
+  font-weight: 400;
+  font-size: 17px;
+}
+header nav ul a:hover {
+  color: black;
+}
+header nav ul a:hover::after {
+  content: "";
+  position: absolute;
+  top: 95px;
+  width: 100px;
+  height: 3px;
+  background-color: var(--Orange);
+}
+header div {
+  background-color: transparent !important;
+  gap: 20px;
+}
+header div > img {
+  width: 60px;
+  cursor: pointer;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+header div > img:hover {
+  border: 1px solid var(--Orange);
+}
+header div button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+header div button img {
+  width: 25px;
+}
+header div button.toggle {
+  width: 30px;
+}
+
+hr {
+  width: 90%;
+}/*# sourceMappingURL=Header.css.map */

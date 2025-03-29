@@ -25,57 +25,63 @@ const Header = () => {
     `;
 
 
-    function showMenuBar() {
-        useEffect(() => {
-            let navBar = document.querySelector("nav.flex");
-            let toggle = document.querySelector(".toggle") ;
-            if (toggle?.hasAttribute("id")) {
-                if (toggle.id === "false") {
-                    toggle.id = "true";
-                } else {
-                    toggle.id = "false";
-                }
-                if (toggle.id === "false") {
-                    navBar?.classList.add("d-none");
-                    navBar?.classList.remove("flex");
-                } else {
-                    navBar?.classList.add("flex");
-                    navBar?.classList.remove("d-none");
-                }
-            }
-        });
+    useEffect(() => {
     }
-
+    , []);
+    function showMenuBar(){
+        let navBar = document.querySelector("nav.flex");
+        let toggle = document.querySelector(".toggle") ;
+        if (toggle?.hasAttribute("id")) {
+            if (toggle.id === "false") {
+                toggle.id = "true";
+            } else {
+                toggle.id = "false";
+            }
+            if (toggle.id === "false") {
+                navBar?.classList.add("d-none");
+                navBar?.classList.remove("flex");
+            } else {
+                navBar?.classList.add("flex");
+                navBar?.classList.remove("d-none");
+            }
+        }
+    }
     return (
-        <header  className='flex justify-between'>
-            <img src={logo.src} alt="" />
-            <nav className='flex justify-between'>
-                <ul>
-                    <li>
-                        <a href="">Collections </a>
-                    </li>
-                    <li>
-                        <a href="">men</a>
-                    </li>
-                    <li>
-                        <a href="">woman</a>
-                    </li>
-                    <li>
-                        <a href="">about</a>
-                    </li>
-                    <li>
-                        <a href="">contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <div></div>
-            <button><img src={shop.src} alt="" /></button>
-            <img src={avatar.src} alt="" />
-            <button className='d-none toggle' id = {"false"}>
-                <img src={bar.src} alt="" />
-            </button>
-        </header>
+        <>
+            <header  className='flex justify-between align-center font-400'>
+                <div className="">
+                    <button className='d-none toggle' onClick={showMenuBar} id = {"false"}>
+                        <img src={bar.src} alt="" />
+                    </button>
+                    <img src={logo.src} className='logo' alt="" />
+                </div>
+                <nav className=''>
+                    <ul className='flex justify-between'>
+                        <li>
+                            <a href="">Collections </a>
+                        </li>
+                        <li>
+                            <a href="">men</a>
+                        </li>
+                        <li>
+                            <a href="">woman</a>
+                        </li>
+                        <li>
+                            <a href="">about</a>
+                        </li>
+                        <li>
+                            <a href="">contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div className="flex align-center">
+                    <button><img src={shop.src} alt="" /></button>
+                    <img src={avatar.src} alt="" />
+                </div>
+            </header>
+            <hr />
+
+        </>
     )
 }
-
 export default Header;

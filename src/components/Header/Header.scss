@@ -1,0 +1,77 @@
+@use "../helpers/variables" as *;
+header {
+    width: 100%;
+    background-color: var(--White);
+    height: 70px;
+    padding-bottom: 10px;
+    img.logo{
+        width: 130px;
+        height: 50px;
+        margin-left: 20px;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        &:hover{
+            border:none;
+        }
+}
+    nav{
+        ul{
+            gap: 20px;
+            list-style: none;
+            li{
+                text-transform: capitalize;
+            }
+            a{
+                text-decoration: none;
+                color: var(--Grayish-blue);
+                font-weight: 400;
+                font-size: 17px;
+                &:hover{
+                    color: black;
+                    &::after{
+                        content: "";    
+                        position: absolute;
+                        top: 95px;
+                        width: 100px;
+                        height: 3px;
+                        background-color: var(--Orange);
+                    }
+            }
+        }
+    }
+    }
+    div{
+        background-color: transparent !important;
+        gap: 20px;
+        >img{
+            width: 60px;
+            cursor: pointer;
+            height: 60px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            &:hover{
+                border: 1px solid var(--Orange);
+            }
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            img{
+                width: 25px;
+            }
+        }
+        button.toggle{
+            width: 30px;
+        }
+    }
+}
+hr{
+    width: 90%;
+}

@@ -6,6 +6,7 @@ function Home() {
   return (
     <>
       <Header/>
+      <div className="gap"></div>
       <Hero/>
     </>
   );
