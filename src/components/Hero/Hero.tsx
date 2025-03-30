@@ -1,13 +1,17 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./Hero.css";
 // import images:
-import  prudactImg from "../images/image-product-1.jpg";
+import prudactImg from "../images/image-product-1.jpg";
 import plus from "../images/icon-plus.svg";
 import minus from "../images/icon-minus.svg";
 import nextImage from "../images/icon-next.svg";
 import previos from "../images/icon-previous.svg";
 import cart from "../images/icon-cart.svg";
+import imageA1 from "../images/image-product-1-thumbnail.jpg";
+import imageA2 from "../images/image-product-2-thumbnail.jpg";
+import imageA3 from "../images/image-product-3-thumbnail.jpg";
+import imageA4 from "../images/image-product-4-thumbnail.jpg";
 import image1 from "../images/image-product-1-thumbnail.jpg";
 import image2 from "../images/image-product-2-thumbnail.jpg";
 import image3 from "../images/image-product-3-thumbnail.jpg";
@@ -15,6 +19,34 @@ import image4 from "../images/image-product-4-thumbnail.jpg";
 const Hero = () => {
 
     const [count, setCount] = useState(0);
+    const [imageNumber, setImageNumber] = useState(1);
+    const [imageSrc, setImageSrc] = useState(imageA1.src); 
+    const [active, setActive] = useState(1);
+    const images = [imageA1, imageA2, imageA3, imageA4];
+    let activeClass = "active";
+    let e = document.querySelector("img.active");
+    // Hendle image click:
+    const handleNextImage = () => {
+        if (imageNumber < images.length) {
+            setImageNumber(imageNumber + 1);
+            setActive(active + 1);
+            setImageSrc(images[imageNumber].src);
+        }else{
+            setImageNumber(1);
+            setActive(1);
+        }
+    }
+    const handlePreviosImage = () => {
+        if (imageNumber < images.length) {
+            setImageNumber(imageNumber - 1);
+            setActive(active - 1);
+            setImageSrc(images[imageNumber].src);
+        }else{
+            setImageNumber(1);
+            setActive(1);
+        }
+    }
+    // handle number of orders:
     const minusHandler = (e:any) => {
         if (count > 0) {
             setCount(count - 1);
@@ -30,11 +62,11 @@ const Hero = () => {
         <div className='hero flex justify-center align-center'>
             <div className="images flex flex-col">
                 <div className="slider flex justify-center align-center">
-                    <button className='previos flex justify-center align-center' type='button'>
+                    <button onClick={handlePreviosImage} className='previos flex justify-center align-center' type='button'>
                         <img src={previos.src} alt="" />
                     </button>
-                    <img src={prudactImg.src} alt="" />
-                    <button className='next justify-center align-center' type='button'>
+                    <img src={imageSrc} alt="" />
+                    <button onClick={handleNextImage} className='next justify-center align-center' type='button'>
                         <img src={nextImage.src} alt="" />
                     </button>
                 </div>
