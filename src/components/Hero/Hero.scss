@@ -3,14 +3,33 @@ div.hero{
     gap: 40px;
     .images{
         gap: 30px;
-        >img{
+        .slider{
             width: 500px;
-            height: 500px;
-            border-radius: 20px;
-            -webkit-border-radius: 20px;
-            -moz-border-radius: 20px;
-            -ms-border-radius: 20px;
-            -o-border-radius: 20px;
+            img{
+                width: 500px;
+                height: 500px;
+                border-radius: 20px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                -ms-border-radius: 20px;
+                -o-border-radius: 20px;
+            }
+            button{
+                display: none;
+                width: 40px;
+                height: 40px;
+                outline: none;
+                border: 1px solid var(--White);
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+            button img{
+                width: 20px;
+                height: 20px;
+            }
         }
         .small-images{
             gap: 33px;
@@ -31,6 +50,10 @@ div.hero{
                 &:hover{
                     opacity: 0.5;
                 }
+            }
+            img.active{
+                border: 2px solid var(--Orange);
+                opacity: 0.7;
             }
         }
     }
@@ -96,13 +119,23 @@ div.hero{
     .control{
         gap: 10px;
         button{
-            height: 35px;
+            cursor: pointer;
+            font-size: 18px;
+            height: 40px;
             outline: none;
             border-radius: 5px;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             -ms-border-radius: 5px;
             -o-border-radius: 5px;
+            transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            &:hover{
+                opacity: 0.7;
+            }
         }
         button.add-to-cart{
             display: flex;
@@ -110,10 +143,77 @@ div.hero{
             align-items: center;
             background-color: var(--Orange);
             color: var(--White);
-            text-align: center;
-            font-weight: 700;
-            font-size: 14px;
-            text-transform: uppercase;
+            width: 280px;
+            font-size: 1.2rem;
+            border: 1px soilid var(--Orange);
+        }
+        .count{
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--Light-grayish-blue);
+            border: 1px solid var(--Light-grayish-blue);
         }
     }
+}
+@media (max-width: 411px) {
+    div.hero{
+        flex-direction: column;
+        align-items: center;
+        .images{
+            .slider{
+                button{
+                    display: flex;
+                    position: absolute;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                button.next{
+                    right: 0;
+                }
+                button.previos{
+                    left: 0;
+                }
+                img{
+                    width: 83%;
+                    position: relative;
+                    left: -2.5px;
+                    height: 100%;
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    -ms-border-radius: 0;
+                    -o-border-radius: 0;
+                }
+            }
+            flex-direction: column;
+            .small-images{
+                display: none;
+            }
+        }
+        .description{
+            text-align: left;
+            h2+p{
+                width: 100%;
+            }
+            .offer {
+                top: 119% !important;
+                left: 33% !important;
+            }
+            .control{
+                flex-direction: column;
+                button.add-to-cart{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                .count{
+                    width: 100%;
+                    margin-bottom: 20px;
+
+                }
+            }
+        }
+    }
+    
 }

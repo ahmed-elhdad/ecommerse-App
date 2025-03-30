@@ -74,3 +74,11 @@
 .gap{
     height: 100px;
 }
+@media (max-width: 411) {
+    .gap{
+        display: none;
+    }
+    hr{
+        display: none;
+    }
+}

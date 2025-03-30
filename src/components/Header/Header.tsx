@@ -49,8 +49,8 @@ const Header = () => {
     return (
         <>
             <header  className='flex justify-between align-center font-400'>
-                <div className="">
-                    <button className='d-none toggle' onClick={showMenuBar} id = {"false"}>
+                <div className="logo flex justify-between align-center">
+                    <button className='toggle' onClick={showMenuBar} id = {"false"}>
                         <img src={bar.src} alt="" />
                     </button>
                     <img src={logo.src} className='logo' alt="" />
