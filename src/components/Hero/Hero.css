@@ -1,13 +1,17 @@
 :root {
-  --Orange: hsl(26, 100%, 55%);
-  --Pale-orange: hsl(25, 100%, 94%);
-  --Very-dark-blue: hsl(220, 13%, 13%);
-  --Dark-grayish-blue: hsl(219, 9%, 45%);
-  --Grayish-blue: hsl(220, 14%, 75%);
-  --Light-grayish-blue: hsl(223, 64%, 98%);
-  --White: hsl(0, 0%, 100%);
-  --Black: hsl(0, 0%, 0%);
+  --Orange: #ff7d1a;
+  --Pale-orange: #ffede0;
+  --Very-dark-blue: #1a1f29;
+  --Dark-grayish-blue: #5f6d86;
+  --Grayish-blue: #b6bcc9;
+  --Light-grayish-blue: #fafafa;
+  --White: #ffffff;
+  --Black: #000000;
   --Black-white: hsla(0, 0%, 0%, 0.75);
+}
+
+body {
+  overflow-x: hidden;
 }
 
 div.hero {
@@ -160,7 +164,7 @@ div.hero .control button.add-to-cart {
   font-size: 1.2rem;
   border: 1px soilid var(--Orange);
 }
-div.hero .control .count {
+div.hero .control button.count {
   width: 100px;
   display: flex;
   justify-content: space-between;
@@ -168,8 +172,14 @@ div.hero .control .count {
   background-color: var(--Light-grayish-blue);
   border: 1px solid var(--Light-grayish-blue);
 }
+div.hero .control button.count:hover {
+  opacity: 1;
+}
 
 @media (max-width: 411px) {
+  body {
+    overflow-x: hidden;
+  }
   div.hero {
     flex-direction: column;
     align-items: center;
@@ -210,8 +220,8 @@ div.hero .control .count {
     width: 100%;
   }
   div.hero .description .offer {
-    top: 119% !important;
-    left: 33% !important;
+    top: 104.5% !important;
+    left: 35% !important;
   }
   div.hero .description .control {
     flex-direction: column;
@@ -223,5 +233,9 @@ div.hero .control .count {
   div.hero .description .control .count {
     width: 100%;
     margin-bottom: 20px;
+  }
+  div.hero .description .real-price {
+    top: -65px !important;
+    left: 75%;
   }
 }/*# sourceMappingURL=Hero.css.map */

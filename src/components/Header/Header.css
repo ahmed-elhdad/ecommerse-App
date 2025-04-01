@@ -1,12 +1,12 @@
 :root {
-  --Orange: hsl(26, 100%, 55%);
-  --Pale-orange: hsl(25, 100%, 94%);
-  --Very-dark-blue: hsl(220, 13%, 13%);
-  --Dark-grayish-blue: hsl(219, 9%, 45%);
-  --Grayish-blue: hsl(220, 14%, 75%);
-  --Light-grayish-blue: hsl(223, 64%, 98%);
-  --White: hsl(0, 0%, 100%);
-  --Black: hsl(0, 0%, 0%);
+  --Orange: #ff7d1a;
+  --Pale-orange: #ffede0;
+  --Very-dark-blue: #1a1f29;
+  --Dark-grayish-blue: #5f6d86;
+  --Grayish-blue: #b6bcc9;
+  --Light-grayish-blue: #fafafa;
+  --White: #ffffff;
+  --Black: #000000;
   --Black-white: hsla(0, 0%, 0%, 0.75);
 }
 
@@ -29,6 +29,21 @@ header img.logo {
 header img.logo:hover {
   border: none;
 }
+header img + span {
+  color: var(--White);
+  background-color: var(--Orange);
+  width: 15px;
+  height: 13px;
+  text-align: center;
+  position: absolute;
+  left: 94%;
+  top: 23px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
 header nav ul {
   gap: 20px;
   list-style: none;
@@ -45,12 +60,12 @@ header nav ul a {
 header nav ul a:hover {
   color: black;
 }
-header nav ul a:hover::after {
+header nav ul a:hover::before {
   content: "";
   position: absolute;
-  top: 95px;
-  width: 100px;
-  height: 3px;
+  top: 94px;
+  width: 60px;
+  height: 4px;
   background-color: var(--Orange);
 }
 header div {
@@ -61,6 +76,7 @@ header div > img {
   width: 60px;
   cursor: pointer;
   height: 60px;
+  border: 1px solid var(--White);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -139,6 +155,10 @@ hr {
   header nav {
     display: none;
   }
+  header img + span {
+    left: 74%;
+    top: 15px;
+  }
   header header > div {
     width: 160px;
     height: 50px;
@@ -172,4 +192,41 @@ hr {
     position: relative;
     left: 20px;
   }
+}
+.responsive {
+  width: 50%;
+  background: var(--Light-grayish-blue);
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  left: 0;
+  top: 0;
+}
+.responsive button {
+  padding-top: 26px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.responsive button .Xmark {
+  width: 20px;
+  position: absolute;
+  height: 20px;
+  left: 17px;
+  cursor: pointer;
+  color: var(--Dark-grayish-blue);
+}
+.responsive ul {
+  list-style: none;
+  line-height: 38px;
+  position: absolute;
+  left: -10%;
+  top: 50px;
+}
+.responsive ul li a {
+  text-transform: capitalize;
+  color: var(--Black);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }/*# sourceMappingURL=Header.css.map */

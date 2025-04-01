@@ -6,9 +6,9 @@ function Home() {
   return (
     <>
       <Header/>
-      
       <div className="gap"></div>
       <Hero/>
+      <div className="will-cover"></div>
     </>
   );
 }

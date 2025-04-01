@@ -1,4 +1,7 @@
 @use "../helpers//variables" as *;
+body {
+    overflow-x: hidden;
+}
 div.hero{
     gap: 40px;
     .images{
@@ -147,17 +150,24 @@ div.hero{
             font-size: 1.2rem;
             border: 1px soilid var(--Orange);
         }
-        .count{
+        button.count{
             width: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: var(--Light-grayish-blue);
             border: 1px solid var(--Light-grayish-blue);
+            &:hover{
+                opacity: 1;
+            }
         }
     }
 }
 @media (max-width: 411px) {
+
+    body {
+        overflow-x: hidden;
+    }
     div.hero{
         flex-direction: column;
         align-items: center;
@@ -198,8 +208,8 @@ div.hero{
                 width: 100%;
             }
             .offer {
-                top: 119% !important;
-                left: 33% !important;
+                top: 104.5% !important;
+                left: 35% !important;        
             }
             .control{
                 flex-direction: column;
@@ -210,8 +220,11 @@ div.hero{
                 .count{
                     width: 100%;
                     margin-bottom: 20px;
-
                 }
+            }
+            .real-price{
+                top: -65px !important;
+                left: 75%;            
             }
         }
     }

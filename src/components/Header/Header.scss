@@ -16,6 +16,21 @@ header {
         &:hover{
             border:none;
         }
+    }
+    img+span{
+        color: var(--White);
+        background-color: var(--Orange);
+        width: 15px;
+        height: 13px;
+        text-align: center;
+        position: absolute;
+        left: 94%;
+        top: 23px;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
 }
     nav{
         ul{
@@ -31,12 +46,12 @@ header {
                 font-size: 17px;
                 &:hover{
                     color: black;
-                    &::after{
+                    &::before{
                         content: "";    
                         position: absolute;
-                        top: 95px;
-                        width: 100px;
-                        height: 3px;
+                        top: 94px;
+                        width: 60px;
+                        height: 4px;
                         background-color: var(--Orange);
                     }
             }
@@ -50,6 +65,7 @@ header {
             width: 60px;
             cursor: pointer;
             height: 60px;
+            border: 1px solid var(--White);
             border-radius: 50%;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
@@ -130,6 +146,10 @@ hr{
         nav{
             display: none;
         }
+        img+span{
+            left: 74%;
+            top: 15px;
+        }
         header>div{
             width: 160px;
             height: 50px;
@@ -167,4 +187,43 @@ hr{
         left: 20px;
     }
     
+}
+.responsive{
+    width: calc(100% / 2);
+    background: var(--Light-grayish-blue);
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    button{
+        padding-top: 26px;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        .Xmark{
+            width: 20px;
+            position: absolute;
+            height: 20px;
+            left: 17px;
+            cursor: pointer;
+            color: var(--Dark-grayish-blue);
+        }
+    }
+    ul{
+        list-style: none;
+        line-height: 38px;
+        position: absolute;
+        left: -10%;
+        top: 50px;
+        li{
+            a{
+                text-transform: capitalize;
+                color: var(--Black);
+                text-decoration: none;
+                font-weight: 700;
+                letter-spacing: 0.5px;
+            }
+        }
+    }
 }
